@@ -1,0 +1,82 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from NotificationService WSDL service -->
+
+  <service name="Notification" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soap.sforce.com/2005/09/outbound"/>
+      <parameter name="wsdlServiceElement" value="NotificationService"/>
+      <parameter name="schemaQualified" value="urn:enterprise.soap.sforce.com,http://soap.sforce.com/2005/09/outbound,urn:sobject.enterprise.soap.sforce.com"/>
+      <parameter name="wsdlServicePort" value="Notification"/>
+      <parameter name="className" value="com.sforce.soap._2005._09.outbound.NotificationBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="NotificationPort"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://soap.sforce.com/2005/09/outbound"
+        qname="ns:>notificationsResponse"
+        type="java:com.sforce.soap._2005._09.outbound.NotificationsResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://soap.sforce.com/2005/09/outbound"
+        qname="ns:>notifications"
+        type="java:com.sforce.soap._2005._09.outbound.Notifications"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://soap.sforce.com/2005/09/outbound"
+        qname="ns:ACS_Certificate__cNotification"
+        type="java:com.sforce.soap._2005._09.outbound.ACS_Certificate__cNotification"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:sobject.enterprise.soap.sforce.com"
+        qname="ns:AggregateResult"
+        type="java:com.sforce.soap.enterprise.sobject.AggregateResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:sobject.enterprise.soap.sforce.com"
+        qname="ns:sObject"
+        type="java:com.sforce.soap.enterprise.sobject.SObject"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:sobject.enterprise.soap.sforce.com"
+        qname="ns:ACS_Certificate__c"
+        type="java:com.sforce.soap.enterprise.sobject.ACS_Certificate__c"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:enterprise.soap.sforce.com"
+        qname="ns:ID"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

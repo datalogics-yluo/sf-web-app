@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/sforce/soap/_2005/_09/outbound/ACS_Certificate__cNotification.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/NotificationBindingStub.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/NotificationPort.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/NotificationService.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/NotificationServiceLocator.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/Notifications.java=UTF-8
+encoding//src/com/sforce/soap/_2005/_09/outbound/NotificationsResponse.java=UTF-8
+encoding//src/com/sforce/soap/enterprise/sobject/ACS_Certificate__c.java=UTF-8
+encoding//src/com/sforce/soap/enterprise/sobject/AggregateResult.java=UTF-8
+encoding//src/com/sforce/soap/enterprise/sobject/SObject.java=UTF-8
